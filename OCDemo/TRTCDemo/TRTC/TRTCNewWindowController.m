@@ -80,7 +80,7 @@
  *
  *  TRTCParams.sdkAppId => 可以在腾讯云实时音视频控制台（https://console.cloud.tencent.com/rav）获取
  *  TRTCParams.userId   => 此处即用户输入的用户名，它是一个字符串
- *  TRTCParams.roomId   => 此处即用户输入的音视频房间号，比如 125
+ *  TRTCParams.strRoomId   => 此处即用户输入的音视频房间号，比如 125
  *  TRTCParams.userSig  => 此处示例代码展示了两种获取 usersig 的方式，一种是从【控制台】获取，一种是从【服务器】获取
  *
  * （1）控制台获取：可以获得几组已经生成好的 userid 和 usersig，他们会被放在一个 json 格式的配置文件中，仅适合调试使用
@@ -117,7 +117,7 @@
     param.sdkAppId = sdkAppID;
     param.userId = userID;
     param.userSig = [GenerateTestUserSig genTestUserSig:userID];
-    param.roomId = (UInt32)roomID.integerValue;
+    param.strRoomId = roomID;
     param.role = TRTCSettingWindowController.isAudience ? TRTCRoleAudience : TRTCRoleAnchor;
     [self enterRoomWithParam:param];
 }

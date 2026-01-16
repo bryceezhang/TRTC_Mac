@@ -66,7 +66,7 @@ class RTCSetAudioQualityViewController: NSViewController {
         
         let param = TRTCParams.init()
         param.sdkAppId = UInt32(SDKAPPID)
-        param.roomId   = roomId
+        param.strRoomId = String(roomId)
         param.userId   = userId
         param.role     = TRTCRoleType.anchor
         param.userSig  = GenerateTestUserSig.genTestUserSig(identifier: param.userId)
